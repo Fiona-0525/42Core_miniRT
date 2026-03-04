@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   aabb.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jiyan <jiyan@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jiyawang <jiyawang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/03 20:12:27 by jiyawang          #+#    #+#             */
-/*   Updated: 2026/03/03 20:27:36 by jiyan            ###   ########.fr       */
+/*   Updated: 2026/03/04 10:38:40 by jiyawang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,8 @@ t_aabb	get_object_aabb(t_object *obj)
 		return (get_cylinder_aabb(&obj->data.cylinder));
 	if (obj->type == OBJ_PLANE)
 	{
-		return ((t_aabb){(t_vector){-1e30f, -1e30f, -1e30f},
-			(t_vector){1e30f, 1e30f, 1e30f}});
+		return ((t_aabb){(t_vector){-1e30, -1e30, -1e30},
+			(t_vector){1e30, 1e30, 1e30}});
 	}
 	return ((t_aabb){(t_vector){0, 0, 0}, (t_vector){0, 0, 0}});
 }

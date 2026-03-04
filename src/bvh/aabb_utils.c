@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   aabb_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jiyan <jiyan@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jiyawang <jiyawang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/03 20:35:00 by jiyawang          #+#    #+#             */
-/*   Updated: 2026/03/03 20:26:34 by jiyan            ###   ########.fr       */
+/*   Updated: 2026/03/04 10:39:40 by jiyawang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@ float	intersect_aabb_dist(t_ray ray, t_aabb box)
 {
 	float	tm[2];
 
-	tm[0] = -1e30f;
-	tm[1] = 1e30f;
+	tm[0] = -1e30;
+	tm[1] = 1e30;
 	update_t(&tm[0], &tm[1], (float []){box.min.x, box.max.x},
 		(float []){ray.origin.x, ray.inv_direction.x});
 	update_t(&tm[0], &tm[1], (float []){box.min.y, box.max.y},
@@ -64,12 +64,12 @@ float	intersect_aabb_dist(t_ray ray, t_aabb box)
 			return (tm[0]);
 		return (0.0f);
 	}
-	return (1e30f);
+	return (1e30);
 }
 
 float	get_node_dist(t_ray ray, t_bvh_node *node)
 {
 	if (!node)
-		return (1e30f);
+		return (1e30);
 	return (intersect_aabb_dist(ray, node->node_bounds));
 }

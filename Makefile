@@ -24,7 +24,6 @@ SRCS = \
 	src/render/color.c \
 	src/render/shadows.c \
 	src/hooks/key.c \
-	src/hooks/mouse.c \
 	src/hooks/mouse_scroll.c \
 	src/utils/free_bvh.c \
 	src/bvh/aabb.c \

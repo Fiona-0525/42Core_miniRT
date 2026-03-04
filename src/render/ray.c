@@ -1,10 +1,9 @@
-
 #include "minirt.h"
 
 static float	safe_inv(float d)
 {
 	if (fabs(d) < 1e-6)
-		return (1e30f);
+		return (1e30);
 	return (1.0f / d);
 }
 

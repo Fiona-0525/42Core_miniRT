@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   traverse.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jiyan <jiyan@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jiyawang <jiyawang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/03 20:12:58 by jiyawang          #+#    #+#             */
-/*   Updated: 2026/03/03 20:30:11 by jiyan            ###   ########.fr       */
+/*   Updated: 2026/03/04 10:39:32 by jiyawang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,11 @@ static t_hit	intersect_internal(t_ray ray, t_bvh_node *node)
 
 	sort_nodes(d, c, node, ray);
 	hit = (t_hit){-1.0, NULL, {0, 0, 0}, {0, 0, 0}};
-	if (d[0] < 1e30f)
+	if (d[0] < 1e30)
 		hit = traverse_bvh(ray, c[0]);
 	if (hit.obj && hit.t < d[1])
 		return (hit);
-	if (d[1] < 1e30f)
+	if (d[1] < 1e30)
 	{
 		hit2 = traverse_bvh(ray, c[1]);
 		if (hit2.obj && (!hit.obj || hit2.t < hit.t))
@@ -55,7 +55,7 @@ static t_hit	intersect_internal(t_ray ray, t_bvh_node *node)
 
 t_hit	traverse_bvh(t_ray ray, t_bvh_node *node)
 {
-	if (!node || intersect_aabb_dist(ray, node->node_bounds) == 1e30f)
+	if (!node || intersect_aabb_dist(ray, node->node_bounds) == 1e30)
 		return ((t_hit){-1.0, NULL, {0, 0, 0}, {0, 0, 0}});
 	if (node->is_leaf)
 		return (intersect_primitives(ray, node->primitives));
