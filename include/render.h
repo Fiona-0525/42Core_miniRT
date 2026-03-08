@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   render.h                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mhnatovs <mhnatovs@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/03/06 13:03:45 by mhnatovs          #+#    #+#             */
+/*   Updated: 2026/03/06 13:03:49 by mhnatovs         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef RENDER_H
 # define RENDER_H
@@ -13,6 +24,8 @@ typedef struct s_viewport
 	t_vector	forward;
 	t_vector	right;
 	t_vector	up;
+	int			width;
+	int			height;
 }				t_viewport;
 
 typedef struct s_ray
@@ -62,5 +75,6 @@ t_color			apply_ambient(t_color obj_color, t_ambient ambient);
 t_color			apply_diffuse(t_hit hit, t_light light);
 int				in_shadow(t_hit hit, t_scene scene);
 t_color			calc_color(t_hit hit, t_scene scene, t_vector view_dir);
+t_viewport		init_viewport_with_dims(t_camera cam, int width, int height);
 
 #endif

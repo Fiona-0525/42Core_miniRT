@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   scene.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mhnatovs <mhnatovs@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/03/05 12:07:37 by mhnatovs          #+#    #+#             */
+/*   Updated: 2026/03/06 16:43:14 by mhnatovs         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "minirt.h"
 
@@ -54,4 +65,9 @@ void	render_scene(mlx_image_t *img, t_scene scene, int step)
 		}
 		p.y += step;
 	}
+}
+
+void	re_render(t_context *ctx)
+{
+	render_scene(ctx->img, ctx->scene, 1);
 }
