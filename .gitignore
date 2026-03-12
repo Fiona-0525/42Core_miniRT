@@ -7,5 +7,4 @@ a.out
 build/
 cmake-build*/
 *:Zone.Identifier
-dockerfile
-Jenkinsfile 
+dockerfile 
