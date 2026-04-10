@@ -2,7 +2,6 @@ NAME = miniRT
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -O3
-#-ffast-math -flto
 
 # ================= FILES =================
 
@@ -97,6 +96,6 @@ fclean: clean
 re: fclean all
 
 v: $(NAME)
-	valgrind --leak-check=full --track-fds=yes ./$(NAME) scenes/test_sphere_orig.rt                        
+	valgrind --leak-check=full --track-fds=yes ./$(NAME) scenes/test_sphere_orig.rt
 
-.PHONY: all clean fclean re v
+.PHONY: all clean fclean re v vs vsmall

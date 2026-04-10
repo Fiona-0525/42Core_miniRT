@@ -6,7 +6,7 @@
 /*   By: mhnatovs <mhnatovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 13:03:45 by mhnatovs          #+#    #+#             */
-/*   Updated: 2026/03/06 13:03:49 by mhnatovs         ###   ########.fr       */
+/*   Updated: 2026/04/10 16:38:55 by mhnatovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ typedef struct s_ray
 {
 	t_vector	origin;
 	t_vector	direction;
-	t_vector	inv_direction;
 }				t_ray;
 
 typedef struct s_point

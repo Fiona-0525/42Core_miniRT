@@ -6,7 +6,7 @@
 /*   By: mhnatovs <mhnatovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 12:06:41 by mhnatovs          #+#    #+#             */
-/*   Updated: 2026/03/05 12:06:47 by mhnatovs         ###   ########.fr       */
+/*   Updated: 2026/04/10 12:14:54 by mhnatovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ static void	horizontal_movement(t_context *cont, float speed)
 
 	move = vector_scale(cont->scene.camera.dir, speed);
 	cont->scene.camera.pos = vector_add(cont->scene.camera.pos, move);
-	cont->needs_rerender = true;
-	cont->last_input_time = mlx_get_time();
 	re_render(cont);
 }
 
@@ -31,8 +29,6 @@ static void	left_right_movement(t_context *cont, float speed)
 	vp = init_viewport(cont->scene.camera);
 	move = vector_scale(vp.right, speed);
 	cont->scene.camera.pos = vector_add(cont->scene.camera.pos, move);
-	cont->needs_rerender = true;
-	cont->last_input_time = mlx_get_time();
 	re_render(cont);
 }
 
@@ -42,8 +38,6 @@ static void	vertical_movement(t_context *cont, float speed)
 
 	move = (t_vector){0, speed, 0};
 	cont->scene.camera.pos = vector_add(cont->scene.camera.pos, move);
-	cont->needs_rerender = true;
-	cont->last_input_time = mlx_get_time();
 	re_render(cont);
 }
 

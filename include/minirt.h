@@ -6,7 +6,7 @@
 /*   By: mhnatovs <mhnatovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 13:03:37 by mhnatovs          #+#    #+#             */
-/*   Updated: 2026/03/06 13:03:40 by mhnatovs         ###   ########.fr       */
+/*   Updated: 2026/04/10 12:14:26 by mhnatovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,12 @@ typedef struct s_context
 	mlx_t		*mlx;
 	mlx_image_t	*img;
 	t_scene		scene;
-	bool		needs_rerender;
-	double		last_input_time;
 }				t_context;
 
 void			error_exit(char *msg);
 void			re_render(t_context *ctx);
 void			key_hook(mlx_key_data_t keydata, void *param);
-void			mouse_hook(mouse_key_t button, action_t action,
-					modifier_key_t mods, void *param);
 void			scroll_hook(double xdelta, double ydelta, void *param);
-void			cursor_hook(double xpos, double ypos, void *param);
 void			move_camera(t_context *cont, mlx_key_data_t key);
 void			rotate_camera(t_context *cont, mlx_key_data_t key);
 
