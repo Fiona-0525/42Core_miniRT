@@ -19,7 +19,6 @@ SRCS = \
 	src/render/ray.c \
 	src/render/viewport.c \
 	src/render/scene.c \
-	src/render/hit_logic.c \
 	src/render/color.c \
 	src/render/shadows.c \
 	src/hooks/key.c \
